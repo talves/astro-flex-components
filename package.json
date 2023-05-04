@@ -10,6 +10,9 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@microsoft/fast-components": "^2.30.6",
+    "@microsoft/fast-element": "^1.11.1",
+    "@microsoft/fast-foundation": "^2.48.1",
     "astro": "^2.3.2"
   }
 }

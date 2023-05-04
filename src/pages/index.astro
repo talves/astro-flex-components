@@ -1,15 +1,43 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro"
 ---
+<script>
+	import { 
+	provideFASTDesignSystem, 
+	fastCard, 
+	fastButton
+	} from '@microsoft/fast-components';
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+	provideFASTDesignSystem()
+	.register(
+		fastCard(),
+		fastButton()
+	);
+</script>
+<style>
+:not(:defined) {
+  visibility: hidden;
+}
+
+fast-card {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  color: white;
+  font-size: var(--type-ramp-plus-5-font-size);
+  line-height: var(--type-ramp-plus-5-line-height);
+}
+
+fast-card > fast-button {
+  align-self: flex-end;
+}
+</style>
+<BaseLayout>
+	<fast-card>
+		<h2>Hello Web Components World!</h2>
+		<fast-button appearance="accent">Click Me</fast-button>
+	</fast-card>
+</BaseLayout>
